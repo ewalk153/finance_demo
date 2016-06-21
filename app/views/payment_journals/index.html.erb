@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Payment Journals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payment_journals.each do |payment_journal| %>
+      <tr>
+        <td><%= payment_journal.description %></td>
+        <td><%= payment_journal.amount %></td>
+        <td><%= link_to 'Show', payment_journal %></td>
+        <td><%= link_to 'Edit', edit_payment_journal_path(payment_journal) %></td>
+        <td><%= link_to 'Destroy', payment_journal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment journal', new_payment_journal_path %>
