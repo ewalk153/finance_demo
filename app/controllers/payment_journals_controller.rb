@@ -1,6 +1,8 @@
 class PaymentJournalsController < ApplicationController
   before_action :set_payment_journal, only: [:show, :edit, :update, :destroy]
 
+  protect_from_forgery :except => [:create]
+
   # GET /payment_journals
   # GET /payment_journals.json
   def index
